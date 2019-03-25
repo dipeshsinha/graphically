@@ -26,8 +26,6 @@ SECRET_KEY = 'qjws2jz_kqiw&&p(o*@jkujmo^f*l!)mm1@vmi!@t*7t^xqng4'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -35,10 +33,11 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'corsheaders',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+if DEBUG is True:
+     INSTALLED_APPS += ('corsheaders', )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
